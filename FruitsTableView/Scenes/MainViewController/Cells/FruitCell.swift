@@ -20,6 +20,10 @@ class FruitCell: UITableViewCell {
         addSubview(fruitImage)
         addSubview(fruitName)
         addSubview(expirationDate)
+        
+        fruitImage.backgroundColor = .clear
+        fruitName.backgroundColor = .clear
+        expirationDate.backgroundColor = .clear
 
     }
     

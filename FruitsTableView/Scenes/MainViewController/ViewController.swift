@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .red
+        tableView.backgroundColor = .clear
         tableView.allowsSelection = true
         tableView.register(FruitCell.self, forCellReuseIdentifier: "Cell")
         return tableView
@@ -50,7 +50,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
          
          cell.configure(with: fruit)
          return cell
+    
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +65,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         setup()
         layout()
+        
+        reloadTableView()
     }
     
     private func setup() {
